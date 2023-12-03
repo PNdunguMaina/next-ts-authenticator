@@ -48,9 +48,8 @@ const OTPPage: React.FC = () => {
           localStorage.setItem('userDetails', JSON.stringify(user))
           setValidationStatus('success')
 
-          // Redirect to dashboard page on successful OTP validation
-          router.push('/dashboard')
-        
+          // Redirect to home page on successful OTP validation
+          router.push('/')
         } else {
           setValidationStatus('failure')
         }

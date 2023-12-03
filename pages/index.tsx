@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import PrivateRoute from '../components/PrivateRoute'
+import SignOutButton from '../components/SignOutButton'
 
 const DashboardPage: React.FC = () => {
   const router = useRouter()
@@ -34,6 +35,7 @@ const DashboardPage: React.FC = () => {
     <PrivateRoute>
       <h1>Welcome to Dashboard</h1>
       <p>User Details: {JSON.stringify(userDetails)}</p>
+      <span><SignOutButton /></span>
     </PrivateRoute>
   )
 }
