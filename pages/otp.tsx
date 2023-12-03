@@ -13,6 +13,9 @@ const OTPSchema = Yup.object().shape({
 })
 
 const OTPPage: React.FC = () => {
+  const [validationStatus, setValidationStatus] = useState<
+    'idle' | 'pending' | 'success' | 'failure'
+  >('idle')
   const router = useRouter()
 
   const formik = useFormik({
@@ -23,17 +26,30 @@ const OTPPage: React.FC = () => {
     onSubmit: async (values) => {
       const apiUrl = 'https://tinyurl.com/scanwize-quiz-otp'
 
-      // send data to API
-      const response = await axios.post(apiUrl, {
-        username: '+254703519593',
-        password: 'Bazenga',
-        otp: values.otp.toString(),
-      })
+      // Make a POST request to the OTP validation API
+      try {
+        setValidationStatus('pending')
+        const response = await axios.post(apiUrl, {
+          username: '+254703519593',
+          password: 'Bazenga',
+          otp: values.otp.toString(),
+        })
 
-      // Get the response
-      const data = await response.data
+        // Get the response
+        const data = await response.data
 
-      formik.resetForm()
+        if (data.status) {
+          setValidationStatus('success')
+          alert('Success')
+        } else {
+          setValidationStatus('failure')
+        }
+
+        formik.resetForm()
+      } catch (error) {
+        setValidationStatus('failure')
+        alert('failure')
+      }
     },
   })
   return (
@@ -53,7 +69,13 @@ const OTPPage: React.FC = () => {
           />
         </label>
         <br />
-        <button type="submit" disabled={!formik.isValid}>
+        {/* Display the validation status to the user */}
+        {validationStatus === 'pending' && <p>Validating OTP...</p>}
+        {validationStatus === 'success' && <p>OTP validation successful!</p>}
+        {validationStatus === 'failure' && (
+          <p>OTP validation failed. Please try again.</p>
+        )}
+        <button type="submit" disabled={!formik.isValid || validationStatus === 'pending'}>
           Submit OTP
         </button>
       </form>
