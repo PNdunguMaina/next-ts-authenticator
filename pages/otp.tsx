@@ -39,8 +39,14 @@ const OTPPage: React.FC = () => {
         const data = await response.data
 
         if (data.status) {
+          // Acces and refresh tokens from the API response
+          const { access_token, refresh_token, user } = data.data
+
+          // Store tokens and user details securely
+          localStorage.setItem('accessToken', access_token)
+          localStorage.setItem('refreshToken', refresh_token)
+          localStorage.setItem('userDetails', JSON.stringify(user))
           setValidationStatus('success')
-          alert('Success')
         } else {
           setValidationStatus('failure')
         }
@@ -48,7 +54,6 @@ const OTPPage: React.FC = () => {
         formik.resetForm()
       } catch (error) {
         setValidationStatus('failure')
-        alert('failure')
       }
     },
   })
@@ -75,7 +80,10 @@ const OTPPage: React.FC = () => {
         {validationStatus === 'failure' && (
           <p>OTP validation failed. Please try again.</p>
         )}
-        <button type="submit" disabled={!formik.isValid || validationStatus === 'pending'}>
+        <button
+          type="submit"
+          disabled={!formik.isValid || validationStatus === 'pending'}
+        >
           Submit OTP
         </button>
       </form>
