@@ -39,7 +39,7 @@ const OTPPage: React.FC = () => {
         const data = await response.data
 
         if (data.status) {
-          // Acces and refresh tokens from the API response
+          // Access and refresh tokens from the API response
           const { access_token, refresh_token, user } = data.data
 
           // Store tokens and user details securely
@@ -47,6 +47,10 @@ const OTPPage: React.FC = () => {
           localStorage.setItem('refreshToken', refresh_token)
           localStorage.setItem('userDetails', JSON.stringify(user))
           setValidationStatus('success')
+
+          // Redirect to dashboard page on successful OTP validation
+          router.push('/dashboard')
+        
         } else {
           setValidationStatus('failure')
         }
