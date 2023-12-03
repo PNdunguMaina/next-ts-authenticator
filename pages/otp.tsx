@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Link from 'next/link'
 
-const otpPage = () => {
-  return <h1>OTP Page</h1>
+const OTPPage: React.FC = () => {
+  return (
+    <div>
+      <h1>Enter OTP here</h1>
+      <form>
+        <label>
+          OTP:
+          <input type="number" name="otp" value="" />
+        </label>
+        <br />
+        <button type="submit">Submit OTP</button>
+      </form>
+      <p>
+        <Link href="/login">Back to Login</Link>
+      </p>
+    </div>
+  )
 }
 
-export default otpPage
+export default OTPPage
