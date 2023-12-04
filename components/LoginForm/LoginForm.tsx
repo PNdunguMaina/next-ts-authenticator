@@ -61,10 +61,9 @@ const LoginForm: React.FC = () => {
 
   return (
     <form className={styles.formContainer} onSubmit={formik.handleSubmit}>
-      {loginStatus === 'pending' && (
+      {loginStatus === 'pending' ? (
         <div className={styles.loadingText}>Please wait...</div>
-      )}
-      {loginStatus != 'pending' && (
+      ) : (
         <div className={styles.errorMessage}>{loginStatus}</div>
       )}
       {error && <div className={styles.errorMessage}>{error}</div>}

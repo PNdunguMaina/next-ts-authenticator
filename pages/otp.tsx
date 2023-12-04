@@ -80,11 +80,7 @@ const OTPPage: React.FC = () => {
         {/* Display the validation status to the user */}
         <div className={styles.validationMessage}>
           {validationStatus === 'pending' && 'Validating OTP...'}
-        </div>
-        <div className={styles.validationMessage}>
-          {validationStatus === 'success' && 'OTP validation successful!'}
-        </div>
-        <div className={styles.errorMessage}>
+          {validationStatus === 'success' && 'OTP successfully validated!'}
           {validationStatus === 'failure' &&
             'OTP validation failed. Please try again.'}
         </div>
