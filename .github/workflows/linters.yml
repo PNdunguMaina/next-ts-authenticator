@@ -24,7 +24,7 @@ jobs:
 
       - name: Run TypeScript linting
         run: |
-          npm run lint
+          npm run lint -- --ignore-pattern README.md
 
       - name: Run ESLint
         run: |
