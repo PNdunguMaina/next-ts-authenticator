@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios'
+import styles from '../styles/otpPage.module.css'
 
 const OTPSchema = Yup.object().shape({
   otp: Yup.number()
@@ -61,12 +62,12 @@ const OTPPage: React.FC = () => {
     },
   })
   return (
-    <div>
-      <h1>Enter OTP here</h1>
-      <form onSubmit={formik.handleSubmit}>
-        <label>
-          OTP:
+    <div className={styles.container}>
+      <h1 className={styles.title}>Enter OTP here</h1>
+      <form className={styles.form} onSubmit={formik.handleSubmit}>
+        <label className={styles.label}>
           <input
+            className={styles.input}
             type="number"
             name="otp"
             value={formik.values.otp}
@@ -76,22 +77,29 @@ const OTPPage: React.FC = () => {
             step="1"
           />
         </label>
-        <br />
         {/* Display the validation status to the user */}
-        {validationStatus === 'pending' && <p>Validating OTP...</p>}
-        {validationStatus === 'success' && <p>OTP validation successful!</p>}
-        {validationStatus === 'failure' && (
-          <p>OTP validation failed. Please try again.</p>
-        )}
+        <div className={styles.validationMessage}>
+          {validationStatus === 'pending' && 'Validating OTP...'}
+        </div>
+        <div className={styles.validationMessage}>
+          {validationStatus === 'success' && 'OTP validation successful!'}
+        </div>
+        <div className={styles.errorMessage}>
+          {validationStatus === 'failure' &&
+            'OTP validation failed. Please try again.'}
+        </div>
         <button
+          className={styles.submitButton}
           type="submit"
           disabled={!formik.isValid || validationStatus === 'pending'}
         >
           Submit OTP
         </button>
       </form>
-      <p>
-        <Link href="/login">Back to Login</Link>
+      <p className={styles.backToLogin}>
+        <a className={styles.link} href="/login">
+          Back to Login
+        </a>
       </p>
     </div>
   )

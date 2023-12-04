@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import styles from './SignOutButton.module.css'
 
 const SignOutButton: React.FC = () => {
   const router = useRouter()
@@ -13,7 +14,7 @@ const SignOutButton: React.FC = () => {
     router.push('/login')
   }
 
-  return <button onClick={handleSignOut}>Sign Out</button>
+  return <button className={styles.button} onClick={handleSignOut}>Sign Out</button>
 }
 
 export default SignOutButton

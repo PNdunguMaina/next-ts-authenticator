@@ -1,14 +1,9 @@
 import React from 'react'
 
-import LoginForm from '../components/loginForm'
+import LoginForm from '../components/LoginForm/LoginForm'
 
 const LoginPage: React.FC = () => {
-  return (
-    <div>
-      <h1>Login Page</h1>
-      <LoginForm />
-    </div>
-  )
+  return <LoginForm />
 }
 
 export default LoginPage
