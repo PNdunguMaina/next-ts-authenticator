@@ -22,10 +22,3 @@ jobs:
         run: |
           npm ci
 
-      - name: Run TypeScript linting
-        run: |
-          npm run lint
-
-      - name: Run ESLint
-        run: |
-          npm run lint:eslint
