@@ -30,7 +30,8 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- Click <a href="https://budget-app-2zrr.onrender.com/" target="_blank">here</a> to go live.
+
+- Click <a href="https://next-ts-authenticator.vercel.app/" target="_blank">here</a> to go live.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -45,7 +46,9 @@ Clone this repository to your desired folder:
 ```sh
   git clone https://github.com/PNdunguMaina/next-ts-authenticator.git
 ```
+
 Navigate to this directory:
+
 ```sh
   cd next-ts-authenticator
 ```
@@ -65,6 +68,7 @@ Run the application with:
 ```sh
   npm run dev
 ```
+
 Explore the authentication flow and protected routes.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
