@@ -1,47 +1,109 @@
-# TypeScript Next.js example
+# 📖 next-ts-authenticator <a name="about-project"></a>
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+**next-ts-authenticator** is a a React application built with Next.js and TypeScript, implementing a secure authentication flow using JSON Web Tokens (JWT) based on provided test APIs. The application includes a user-friendly login form with comprehensive field validation. Upon successful login, users are redirected to an OTP page for an added layer of security. Access to user details is protected and displayed on an authenticated route.
 
-## Deploy your own
+## 🛠 Built With <a name="built-with"></a>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
+### Tech Stack <a name="tech-stack"></a>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://nextjs.org/">NextJS</a></li>
+    <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
+  </ul>
+</details>
 
-## How to use it?
+<!-- Features -->
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+### Key Features <a name="key-features"></a>
 
-```bash
-npx create-next-app --example with-typescript with-typescript-app
+- **User-friendly login form with comprehensive field validation.**
+- **JWT-based authentication for secure user verification.**
+- **OTP page for enhanced authentication post-login.**
+- **Protected route to display user details.**
+- **Utilizes a UI component library for a polished and consistent user interface.**
+- **Creativity in UI/UX design for an engaging user experience.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+- Click <a href="https://budget-app-2zrr.onrender.com/" target="_blank">here</a> to go live.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+  git clone https://github.com/PNdunguMaina/next-ts-authenticator.git
+```
+Navigate to this directory:
+```sh
+  cd next-ts-authenticator
 ```
 
-```bash
-yarn create next-app --example with-typescript with-typescript-app
+### Install
+
+Install dependencies with:
+
+```sh
+  npm install
 ```
 
-```bash
-pnpm create next-app --example with-typescript with-typescript-app
+### Usage
+
+Run the application with:
+
+```sh
+  npm run dev
 ```
+Explore the authentication flow and protected routes.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Notes
+<!-- AUTHORS -->
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+## 👥 Authors <a name="authors"></a>
 
-```
-npm install --save-dev typescript
-```
+👤 **Patrick Maina**
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+- GitHub: [@PNdunguMaina](https://github.com/PNdunguMaina)
+- LinkedIn: [Patrick Maina](https://www.linkedin.com/in/pndungumaina/)
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+<!-- CONTRIBUTING -->
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+## 🤝 Contributing <a name="contributing"></a>
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/PNdunguMaina/next-ts-authenticator/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, please give it a star.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
